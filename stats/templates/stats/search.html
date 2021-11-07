@@ -1,0 +1,10 @@
+{% extends 'stats/template.html' %}
+
+{% block body %}
+<div class="username-input-form">
+    <form method="post">
+        {% csrf_token %}
+        <input class="username-input" type="text" name="username" maxlength="16" required placeholder="Username">
+    </form>
+</div>
+{% endblock %}

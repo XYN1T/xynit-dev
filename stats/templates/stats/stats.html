@@ -1,0 +1,48 @@
+{% extends 'stats/template.html' %}
+{% load static %}
+<head>
+    {% block head %}
+        <link rel="stylesheet" href="{% static 'css/stats.css' %}">
+    {% endblock%}
+</head>
+{% block body %}
+<body>  
+    <div class="left">
+        <h1 class="username"><b>{{ username }}</b></h1>
+        <img src="https://crafatar.com/renders/body/{{ uuid }}" alt="Skin" class="skin">
+    </div>
+    <div class="right">
+        <ul class="gamemodes">
+            <li>
+                <h3 id="title">Skywars stats</h3>
+                <ul>
+                    <li>Kills: {{ sw_kills }}</li>
+                    <li>Deaths: {{ sw_deaths }}</li>
+                    <li>KDR: {{ sw_kdr }}</li>
+                    <li>Wins: {{ sw_wins }}</li>
+                    <li>Losses: {{ sw_losses }}</li>
+                    <li>WLR: {{ sw_wlr }}</li>
+                </ul>
+            </li>
+            <li>
+                <h3 id="title">Bedwars stats</h3>
+                <ul>
+                    <li>Kills: {{ bw_kills }}</li>
+                    <li>Deaths: {{ bw_deaths }}</li>
+                    <li>KDR: {{ bw_kdr }}</li>
+                    <li>Wins: {{ bw_wins }}</li>
+                    <li>Losses: {{ bw_losses }}</li>
+                    <li>WLR: {{ bw_wlr }}</li>
+                    <li>Winstreak: {{ bw_ws }}</li>
+                    <li>Final kills: {{ bw_final_kills }}</li>
+                    <li>Final deaths: {{ bw_final_deaths }}</li>
+                    <li>FKDR: {{ bw_fkdr }}</li>
+                    <li>Beds broken: {{ bw_beds_broken }}</li>
+                    <li>Beds lost: {{ bw_beds_lost }}</li>
+                    <li>BBLR: {{ bw_bblr }}</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</body>
+{% endblock %}

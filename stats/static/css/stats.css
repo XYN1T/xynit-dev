@@ -1,0 +1,21 @@
+.left {
+    width: 50%;
+    float:left;
+}
+
+.right {
+    width: 50%;
+    float: right;
+}
+
+.username {
+    font-size: 3rem;
+}
+
+.gamemodes li #title{
+    font-size: 3rem;
+}
+
+.gamemodes li ul li {
+    font-size: 2rem;
+}
