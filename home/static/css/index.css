@@ -1,0 +1,94 @@
+.nav {
+    width: 50%;
+    height: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.nav ul {
+    list-style: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.nav ul li {
+    padding-bottom: 2rem;
+    padding-top: 2rem;
+    width: min-content;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.nav ul li a {
+    color: rgb(65, 65, 65);
+    text-decoration: none;
+    font-size: 4rem;
+    text-align: center;
+}
+
+.item-one {
+    animation-name: text-pop-up-top;
+    animation-duration: 1s;
+    animation-timing-function: ease;
+    animation-delay: 0s;
+    animation-iteration-count: 1;
+    animation-direction: reverse;
+    animation-fill-mode: forwards;
+}
+.item-two {
+    animation-name: text-pop-up-top;
+    animation-duration: 1s;
+    animation-timing-function: ease;
+    animation-delay: 0.35s;
+    animation-iteration-count: 1;
+    animation-direction: reverse;
+    animation-fill-mode: forwards;
+    visibility: hidden;
+}
+.item-three {
+    animation-name: text-pop-up-top;
+    animation-duration: 1s;
+    animation-timing-function: ease;
+    animation-delay: 0.7s;
+    animation-iteration-count: 1;
+    animation-direction: reverse;
+    animation-fill-mode: forwards;
+    visibility: hidden;
+}
+
+h1 {
+    font-size: 6rem;
+}
+
+.nav ul li a h1 {
+    transition-duration: 0.2s;
+    -webkit-background-clip: text;
+}
+
+.nav ul li a h1:hover {
+    font-size: 8rem;
+    transition:font-size 0.5s ease 0s;
+}
+
+@keyframes text-pop-up-top {
+    0%{
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+        -webkit-transform-origin: 50% 50%;
+        transform-origin: 50% 50%;
+        text-shadow: none;
+        visibility: visible;
+    }
+    100%{
+        -webkit-transform: translateY(-50px);
+        transform: translateY(-50px);
+        -webkit-transform-origin: 50% 50%;
+        transform-origin: 50% 50%;
+        text-shadow: 0 1px 0 #ccc,0 2px 0 #ccc,0 3px 0 #ccc,0 4px 0 #ccc,0 5px 0 #ccc,0 6px 0 #ccc,0 7px 0 #ccc,0 8px 0 #ccc,0 9px 0 #ccc,0 50px 30px rgba(0,0,0,.3);
+    }
+}

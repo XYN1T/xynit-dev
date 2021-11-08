@@ -1,0 +1,18 @@
+{% extends 'home/template.html' %}
+{% load static %}
+<head>
+    {% block head %}
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+    {% endblock %}
+</head>
+<body>
+    {% block body %}
+        <div class="nav">
+            <ul class="test">
+                <li><a href="/"><h1 class="item-one">XYNIT</h1></a></li>
+                <li><a href="stats/search"><h1 class="item-two">Utilities</h1></a></li>
+                <li><a href="#"><h1 class="item-three">About</h1></a></li>
+            </ul>
+        </div>
+    {% endblock %}
+</body>
