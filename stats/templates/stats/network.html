@@ -1,0 +1,35 @@
+{% extends 'stats/template.html' %}
+{% load static %}
+<head>
+    {% block head %}
+        <link rel="stylesheet" href="{% static 'css/stats.css' %}">
+    {% endblock%}
+</head>
+{% block body %}
+<div class="left">
+    {% if rank %}
+    <h1 class="username">[{{ rank }}] <b>{{ username }}</b></h1>
+    {% else %}
+    <h1 class="username"><b>{{ username }}</b></h1>
+    {% endif %}
+    <img src="https://crafatar.com/renders/body/{{ uuid }}" alt="Skin" class="skin">
+</div>
+<div class="right">
+    <ul class="gamemodes">
+        <li class="gamemode">
+            <a href="#title" id="title"> Network</a>
+            <ul class="network">
+                <li>Network level: {{ network_level }}</li>
+                <li>Karma: {{ karma }}</li>
+                <li>Quests: {{ quests }}</li>
+            </ul>
+        </li>
+        <li class="gamemode">
+            <h3 id="title">Skywars</h3>
+        </li>
+        <li class="gamemode">
+            <h3 id="title">Bedwars</h3>
+        </li>
+    </ul>
+</div>
+{% endblock %}

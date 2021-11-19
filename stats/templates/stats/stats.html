@@ -6,43 +6,77 @@
     {% endblock%}
 </head>
 {% block body %}
-<body>  
-    <div class="left">
-        <h1 class="username"><b>{{ username }}</b></h1>
-        <img src="https://crafatar.com/renders/body/{{ uuid }}" alt="Skin" class="skin">
-    </div>
-    <div class="right">
-        <ul class="gamemodes">
-            <li>
-                <h3 id="title">Skywars stats</h3>
-                <ul>
-                    <li>Kills: {{ sw_kills }}</li>
-                    <li>Deaths: {{ sw_deaths }}</li>
-                    <li>KDR: {{ sw_kdr }}</li>
-                    <li>Wins: {{ sw_wins }}</li>
-                    <li>Losses: {{ sw_losses }}</li>
-                    <li>WLR: {{ sw_wlr }}</li>
-                </ul>
-            </li>
-            <li>
-                <h3 id="title">Bedwars stats</h3>
-                <ul>
-                    <li>Kills: {{ bw_kills }}</li>
-                    <li>Deaths: {{ bw_deaths }}</li>
-                    <li>KDR: {{ bw_kdr }}</li>
-                    <li>Wins: {{ bw_wins }}</li>
-                    <li>Losses: {{ bw_losses }}</li>
-                    <li>WLR: {{ bw_wlr }}</li>
-                    <li>Winstreak: {{ bw_ws }}</li>
-                    <li>Final kills: {{ bw_final_kills }}</li>
-                    <li>Final deaths: {{ bw_final_deaths }}</li>
-                    <li>FKDR: {{ bw_fkdr }}</li>
-                    <li>Beds broken: {{ bw_beds_broken }}</li>
-                    <li>Beds lost: {{ bw_beds_lost }}</li>
-                    <li>BBLR: {{ bw_bblr }}</li>
-                </ul>
-            </li>
+<div class="left">
+    {% if rank %}
+    <h1 class="username">[{{ rank }}] <b>{{ username }}</b></h1>
+    {% else %}
+    <h1 class="username"><b>{{ username }}</b></h1>
+    {% endif %}
+    <img src="https://crafatar.com/renders/body/{{ uuid }}" alt="Skin" class="skin">
+</div>
+<div class="right">
+    <div class="frame">
+        <h1 class="title">NETWORK</h1>
+        <ul class="network-ul gamemode">
+            <div class="group">
+                <li>Network level: {{ network_level }}</li>
+                <li>Karma: {{ karma }}</li>
+                <li>Achievement points: {{ achievement_points }}</li>
+            </div>
+            <div class="group">
+                <li>Quests completed: {{ quests }}</li>
+                <li>Challenges completed: {{ challenges }}</li>
+            </div>
+        </ul>
+        <h1 class="title">SKYWARS</h1>
+        <ul class="skywars-ul gamemode">
+            <div class="group">
+                <li>Kills: {{ sw_kills }}</li>
+                <li>Deaths: {{ sw_deaths }}</li>
+                <li>Kill/death ratio: {{ sw_kdr }}</li>
+                <li>Kills to {{ sw_next_kdr }} K/D ratio: {{ sw_kills_needed_kdr }}</li>
+            </div>
+            <div class="group">
+                <li>Wins: {{ sw_wins }}</li>
+                <li>Losses: {{ sw_losses }}</li>
+                <li>Win/loss ratio: {{ sw_wlr }}</li>
+                <li>Wins to {{ sw_next_wlr }} W/L ratio: {{ sw_wins_needed_wlr }}</li>
+            </div>
+            <div class="group">
+                <li>Star: {{ sw_star }}</li>
+                <li>Exp to star {{ sw_next_star }}: {{ sw_exp_needed }}</li>
+                <li>Wins to next star: {{ sw_wins_needed_levelup }} (3 kills/game)</li>
+            </div>
+
+        </ul>
+        <h1 class="title">BEDWARS</h1>
+        <ul class="bedwars-ul gamemode">
+            <div class="group">
+                <li>Kills: {{ bw_kills }}</li>
+                <li>Deaths: {{ bw_deaths }}</li>
+                <li>KDR: {{ bw_kdr }}</li>
+            </div>
+            <div class="group">
+                <li>Wins: {{ bw_wins }}</li>
+                <li>Losses: {{ bw_losses }}</li>
+                <li>WLR: {{ bw_wlr }}</li>
+            </div>
+            <div class="group">
+                <li>Final kills: {{ bw_final_kills }}</li>
+                <li>Final deaths: {{ bw_final_deaths }}</li>
+                <li>FKDR: {{ bw_fkdr }}</li>
+            </div>
+            <div class="group">
+                <li>Beds broken: {{ bw_beds_broken }}</li>
+                <li>Beds lost: {{ bw_beds_lost }}</li>
+                <li>BBLR: {{ bw_bblr }}</li>
+            </div>
+            <div class="group">
+                <li>Level: {{ bw_level }}</li>
+                <li>Exp to level {{ bw_next_level }}: {{ bw_exp_needed }}</li>
+                <li>Winstreak: {{ bw_ws }}</li>
+            </div>
         </ul>
     </div>
-</body>
+</div>
 {% endblock %}
